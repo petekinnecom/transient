@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	 android:layout_width="wrap_content"
+	android:layout_height="match_parent">
+    <ImageView
+        android:id="@+id/ImageSwitcher01"
+        android:layout_centerInParent="true"
+		android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/background"
+        android:scaleType="centerCrop"
+        >
+    </ImageView>
+
+
+	<RelativeLayout android:id="@+id/InnerRelativeLayout"
+		android:layout_width="wrap_content" android:layout_height="wrap_content"
+		android:layout_alignParentBottom="true" android:paddingLeft="20sp"
+		android:paddingRight="20sp">
+
+		<Button android:text="       Start       " android:id="@+id/start_button"
+			android:layout_alignParentRight="true" android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:typeface="monospace">
+		</Button>
+
+		<Button android:text="      Options      " android:id="@+id/options_button"
+			android:layout_alignParentRight="false" android:layout_width="wrap_content"
+			android:layout_height="wrap_content" 
+			android:typeface="monospace">
+		</Button>
+
+	</RelativeLayout>
+	<TextView android:layout_height="wrap_content"
+		android:textSize="70sp" android:gravity="center_vertical|center_horizontal"
+		android:text="transient_" android:layout_width="wrap_content"
+		android:id="@+id/textView1" android:textColor="#DDDDDD"
+		android:layout_alignParentRight="true" 
+		android:typeface="monospace"
+		></TextView>
+</RelativeLayout>

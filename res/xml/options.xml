@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+	<CheckBoxPreference android:key="trailers"
+		android:title="@string/options_trailers" android:summary="@string/options_trailers_summary"
+		android:defaultValue="true" android:enabled="true" />
+		
+	<EditTextPreference android:key="vertical_ratio"
+		android:title="@string/options_vertical_ratio" android:summary="@string/options_vertical_ratio_summary"
+		android:defaultValue="80" android:numeric="integer" android:enabled="true" />
+
+</PreferenceScreen>

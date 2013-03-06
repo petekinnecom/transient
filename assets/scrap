@@ -1,0 +1,55 @@
+	private int ii;
+
+	public boolean onTouchEvent(MotionEvent event)
+	{
+		dumpEvent(event);
+		/**
+		 * First, see if we are at the losing screen. If we are, any event
+		 * starts us again. clear the flag and restart.
+		 * 
+		 * TODO: buggy?
+		 */
+		if (waitingForNewGame)
+		{
+			waitingForNewGame = false;
+			thread.reset();
+		}
+
+		if (event.getAction() == MotionEvent.ACTION_UP)
+		{
+			Log.d(TAG, "action_pointer_up");
+			// // don't know why necessary, but might stop some crashes
+			pid = event.getActionIndex();
+			if (pressed[pid] != null)
+				pressed[pid].release();
+			//
+			// /*
+			// * this is an ugly hack, but it works... Say you press two
+			// fingers:
+			// * L,R in this order. L DOWN : pid = 0 R DOWN : pid = 1 L UP : pid
+			// =
+			// * 0 R UP : pid = 0
+			// *
+			// * Notice that finger R now has index zero at the end. This could
+			// * probably be avoided by using some better event management, but
+			// * I'd rather spend my time adding new exciting features right
+			// * now...so blah.
+			// */
+			if (pid == 0)
+				pressed[0] = pressed[1];
+		} else
+		{
+			for (ii = 0; (ii < event.getPointerCount() && ii < 2); ii++)
+			{
+				actionButton = getButton((int) event.getX(pid),
+						(int) event.getY(pid));
+				if (actionButton != null)
+				{
+					actionButton.press();
+					pressed[pid] = actionButton;
+				}
+			}
+		}
+
+		return true;
+	}

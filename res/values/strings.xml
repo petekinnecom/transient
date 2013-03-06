@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">transience_</string>
+    <string name="start_button">Start</string>
+    <string name="options_button">options</string>
+    
+    <string name="options_title">options.</string>
+    <string name="options_trailers">Disable trailers</string>
+    <string name="options_trailers_summary">Check this option to turn off the trail behind the ball.</string>
+
+    <string name="options_label">Options</string>
+    <string name="options_shortcut">Options</string>
+    
+    <string name="levelSelector_title">Level Selector</string>
+    <string name="game_title">Game.</string>
+    
+    <string name="editor_title">Editor.</string>
+    
+    <string name="save_label">Save</string>
+    <string name="save_shortcut">Save</string>
+    
+    <string name="options_vertical_ratio">Vertical Ratio</string>
+    <string name="options_vertical_ratio_summary">How tall should the game lane be (in percent).  Smaller values mean larger buttons. Must be between 60-90. Default 80.</string>
+    
+    <string name="options_goal_fps">Goal FPS</string>
+    <string name="options_goal_fps_summary">Desired FPS. (15 to 60)</string>
+</resources>
